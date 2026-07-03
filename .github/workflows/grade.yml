@@ -245,6 +245,15 @@ jobs:
               f.write("=" * 80 + "\n")
               f.write("\n".join(lines))
               f.write("\n")
+
+          # Augment result.json with best_time for downstream Classmoji workflow
+          try:
+              result['best_time'] = user_stats.get('best_time')
+              result['total_submissions'] = user_stats.get('total_submissions', 1)
+              with open('result.json', 'w') as f:
+                  json.dump(result, f, indent=2)
+          except Exception as e:
+              print(f"Warning: Failed to augment result.json: {e}", file=sys.stderr)
           PY
 
       - name: Ensure result.json exists
