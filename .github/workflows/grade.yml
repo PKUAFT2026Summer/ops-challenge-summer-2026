@@ -247,6 +247,14 @@ jobs:
               f.write("\n")
           PY
 
+      - name: Ensure result.json exists
+        if: always()
+        run: |
+          # Guarantee artifact exists even if runner/grader crashed before creating it
+          if [ ! -f result.json ]; then
+            echo '{"status":"GRADER_ERROR","elapsed_seconds":0,"error":"Runner failed before producing results"}' > result.json
+          fi
+
       - name: Upload grader result
         if: always()
         uses: actions/upload-artifact@v4

@@ -1,9 +1,10 @@
 name: GitHub Classroom Workflow
 
 on:
-  - push
-  - pull_request
-  - workflow_dispatch
+  workflow_run:
+    workflows: ["Grade Submission"]
+    types: [completed]
+  workflow_dispatch:
 
 permissions:
   actions: read
@@ -11,89 +12,111 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  autograding:
     name: Autograding
-    if: github.actor != 'github-classroom[bot]'
-    runs-on: [self-hosted, grader]
-    timeout-minutes: 15
+    # Skip if triggered by classroom bot, or run if manual dispatch
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.actor.login != 'github-classroom[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        env:
-          GIT_CONFIG_COUNT: 3
-          GIT_CONFIG_KEY_0: http.version
-          GIT_CONFIG_VALUE_0: HTTP/1.1
-          GIT_CONFIG_KEY_1: http.postBuffer
-          GIT_CONFIG_VALUE_1: 524288000
-          GIT_CONFIG_KEY_2: protocol.version
-          GIT_CONFIG_VALUE_2: 1
-
-      - name: OPS Grader
-        id: ops-grader
-        uses: classroom-resources/autograding-command-grader@v1
+      - name: Download grade result artifact
+        id: download
+        uses: actions/download-artifact@v4
+        continue-on-error: true
         with:
-          test-name: OPS Grader
-          command: |
-            set +e
-            PYTHON=/home/runner/miniconda3/envs/ops/bin/python
-            ACTIVE_TASK_CONFIG=/srv/opsChallengeNew/tasks/active_task.json
-            GRADER_DIR=/srv/opsChallengeNew/grader
-            WORKSPACE=$(pwd)
+          name: grader-result
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
 
-            TASK_JSON=$("${PYTHON}" -c "import json; config=json.load(open('${ACTIVE_TASK_CONFIG}')); print(config['active_task_path'])")
-            RESULT_JSON=$(taskset -c 0-7 "${PYTHON}" "${GRADER_DIR}/host_verify_mem.py" "${WORKSPACE}" "${TASK_JSON}")
-            GRADER_EXIT=$?
-            export RESULT_JSON
-            export GRADER_EXIT
-            printf '%s\n' "${RESULT_JSON}" > result.json
-            echo "${RESULT_JSON}"
-            "${PYTHON}" - <<'PY'
-            import json
-            import os
-            import sys
+      - name: Compute race score
+        id: score
+        run: |
+          # Default to failure score if artifact missing or malformed
+          if [ "${{ steps.download.outcome }}" != "success" ] || [ ! -f result.json ]; then
+            echo "score=9999" >> $GITHUB_OUTPUT
+            echo "status=ARTIFACT_MISSING" >> $GITHUB_OUTPUT
+            echo "elapsed=N/A" >> $GITHUB_OUTPUT
+            echo "feedback=⚠️ Grader did not produce valid results." >> $GITHUB_OUTPUT
+            exit 0
+          fi
 
-            try:
-                result = json.loads(os.environ.get("RESULT_JSON", "{}"))
-            except json.JSONDecodeError:
-                with open("run-time.txt", "w") as f:
-                    f.write("status=INVALID_JSON\n")
-                print("Autograder did not return valid JSON.", file=sys.stderr)
-                raise SystemExit(1)
+          # Parse result.json for status and elapsed time
+          STATUS=$(python3 -c "
+          import json, sys
+          try:
+              with open('result.json') as f:
+                  d = json.load(f)
+              print(d.get('status', 'UNKNOWN'))
+          except Exception as e:
+              print('PARSE_ERROR', file=sys.stderr)
+              print('PARSE_ERROR')
+          ")
 
-            status = result.get("status", "UNKNOWN")
-            elapsed = result.get("elapsed_seconds")
-            with open("run-time.txt", "w") as f:
-                f.write(f"status={status}\n")
-                if elapsed is not None:
-                    f.write(f"elapsed_seconds={elapsed}\n")
-                if result.get("max_diff") is not None:
-                    f.write(f"max_diff={result['max_diff']}\n")
+          ELAPSED=$(python3 -c "
+          import json, sys
+          try:
+              with open('result.json') as f:
+                  d = json.load(f)
+              print(d.get('elapsed_seconds', 0))
+          except Exception:
+              print(0)
+          ")
 
-            if os.environ.get("GRADER_EXIT") != "0" or status != "PASS":
-                print(f"Autograder status: {status}", file=sys.stderr)
-                if result.get("error"):
-                    print(result["error"], file=sys.stderr)
-                raise SystemExit(1)
-            PY
-          timeout: 15
-          max-score: 100
+          # Race scoring rule: PASS = runtime in ms, FAIL = 9999
+          if [ "$STATUS" = "PASS" ]; then
+            SCORE=$(python3 -c "import math; print(max(1, int(round(float('${ELAPSED}') * 1000))))")
+            EMOJI="✅"
+          else
+            SCORE=9999
+            EMOJI=$(python3 -c "
+          emoji_map = {
+              'WRONG_ANSWER': '❌',
+              'OOM': '🧠',
+              'TIMEOUT': '⏱️',
+              'RUNTIME_ERROR': '💥',
+              'VERIFY_ERROR': '⚠️',
+              'GRADER_ERROR': '🔧',
+              'PARSE_ERROR': '📄',
+              'ARTIFACT_MISSING': '🚫'
+          }
+          print(emoji_map.get('${STATUS}', '❓'))
+          ")
+          fi
 
-      - name: Autograding Reporter
-        if: always()
-        uses: classroom-resources/autograding-grading-reporter@v1
-        env:
-          OPS-GRADER_RESULTS: "${{ steps.ops-grader.outputs.result }}"
+          # Format elapsed time for display
+          if [ "$STATUS" = "PASS" ]; then
+            ELAPSED_DISPLAY=$(python3 -c "print(f'{float(\"${ELAPSED}\"):.3f}s')" 2>/dev/null || echo "${ELAPSED}s")
+          else
+            ELAPSED_DISPLAY="N/A"
+          fi
+
+          echo "score=$SCORE" >> $GITHUB_OUTPUT
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "elapsed=$ELAPSED_DISPLAY" >> $GITHUB_OUTPUT
+          echo "emoji=$EMOJI" >> $GITHUB_OUTPUT
+
+          echo "📊 Computed Score: $SCORE ms (Status: $STATUS, Elapsed: $ELAPSED_DISPLAY)"
+
+      - name: Submit to Classmoji Autograder
+        uses: classmoji/autograder@main
         with:
-          runners: ops-grader
+          score: ${{ steps.score.outputs.score }}
+          max-score: 9999
+          feedback: |
+            ## ${{ steps.score.outputs.emoji }} Race Result
 
-      - name: Upload run timing
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: classmoji-run-timing-${{ github.run_id }}-${{ github.run_attempt }}
-          path: |
-            result.json
-            run-time.txt
-          if-no-files-found: warn
-          retention-days: 30
+            **Status**: `${{ steps.score.outputs.status }}`
+            **Elapsed Time**: ${{ steps.score.outputs.elapsed }}
+            **Numeric Score**: **${{ steps.score.outputs.score }} ms** (lower is better ⬇️)
+
+            ---
+
+            💡 **How scoring works:**
+            - ✅ Pass all tests → Your score = actual runtime in milliseconds
+            - ❌ Any test fails → Your score = 9999 ms (penalty)
+            - 🏆 Lower scores rank higher on the leaderboard
+
+            _Optimize your solution to minimize execution time!_
