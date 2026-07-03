@@ -12,7 +12,7 @@ jobs:
     runs-on: [self-hosted, grader]
     timeout-minutes: 15
     permissions:
-      contents: read
+      contents: write
 
     env:
       ACTIVE_TASK_CONFIG: /srv/opsChallengeNew/tasks/active_task.json
@@ -263,6 +263,27 @@ jobs:
           if [ ! -f result.json ]; then
             echo '{"status":"GRADER_ERROR","elapsed_seconds":0,"error":"Runner failed before producing results"}' > result.json
           fi
+
+      - name: Render and commit leaderboard
+        if: always()
+        run: |
+          ${CONDA_PYTHON_EXEC} .github/scripts/render_leaderboard.py \
+            --task-json "${TASK_JSON}" \
+            --leaderboard-dir "${LEADERBOARD_BASE_DIR}" \
+            --output LEADERBOARD.md
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -z "$(git status --porcelain -- LEADERBOARD.md)" ]; then
+            echo "LEADERBOARD.md is already up to date."
+            exit 0
+          fi
+
+          git add LEADERBOARD.md
+          git commit -m "chore: update leaderboard [skip ci]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Upload grader result
         if: always()

@@ -1,0 +1,16 @@
+# OPS Challenge Leaderboard
+
+**Task:** `rolling_argmin_v1` - Time Series Argmin - Week 3
+**Updated:** 2026-07-03 09:16:38 UTC
+
+Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
+
+| Rank | User | Best Time (s) | Submissions | Passed | Failed |
+| ---: | :--- | ------------: | ----------: | -----: | -----: |
+| 1 | `odsbaron` | 12.366 | 1 | 1 | 0 |
+| 2 | `Jiaosifang` | 12.850 | 4 | 3 | 1 |
+| 3 | `hy-ouyang` | 64.823 | 1 | 1 | 0 |
+
+---
+
+_This file is generated automatically by the grading workflow. Do not edit it manually._

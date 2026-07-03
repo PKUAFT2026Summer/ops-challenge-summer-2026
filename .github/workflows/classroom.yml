@@ -4,7 +4,6 @@ on:
   workflow_run:
     workflows: ["Grade Submission"]
     types: [completed]
-  workflow_dispatch:
 
 permissions:
   actions: read
@@ -14,10 +13,8 @@ permissions:
 jobs:
   autograding:
     name: Autograding
-    # Skip if triggered by classroom bot, or run if manual dispatch
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      github.event.workflow_run.actor.login != 'github-classroom[bot]'
+    # Skip assignment bootstrap commits from the classroom bot.
+    if: github.event.workflow_run.actor.login != 'github-classroom[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
@@ -31,16 +28,17 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
 
-      - name: Compute race score
+      - name: Compute pass/fail feedback
         id: score
         run: |
           # Default to failure score if artifact missing or malformed
           if [ "${{ steps.download.outcome }}" != "success" ] || [ ! -f result.json ]; then
-            echo "score=9999" >> $GITHUB_OUTPUT
+            echo "score=0" >> $GITHUB_OUTPUT
             echo "status=ARTIFACT_MISSING" >> $GITHUB_OUTPUT
             echo "elapsed=N/A" >> $GITHUB_OUTPUT
-            echo "best_ms=9999" >> $GITHUB_OUTPUT
-            echo "is_new_best=false" >> $GITHUB_OUTPUT
+            echo "best=N/A" >> $GITHUB_OUTPUT
+            echo "max_diff=N/A" >> $GITHUB_OUTPUT
+            echo "emoji=❌" >> $GITHUB_OUTPUT
             exit 0
           fi
 
@@ -54,6 +52,7 @@ jobs:
           status    = d.get('status', 'UNKNOWN')
           elapsed   = float(d.get('elapsed_seconds') or 0)
           best_time = d.get('best_time')          # set by LeaderboardManager, None on first submission
+          max_diff  = d.get('max_diff')
 
           emoji_map = {
               'PASS':          '✅',
@@ -66,35 +65,20 @@ jobs:
           }
           emoji = emoji_map.get(status, '❓')
 
-          # Current run score
-          if status == 'PASS':
-              current_ms = max(1, int(round(elapsed * 1000)))
-          else:
-              current_ms = 9999
-
-          # Historical best score (best_time comes from LeaderboardManager post-update,
-          # so it already reflects this submission — use it directly when PASS)
-          if best_time is not None:
-              best_ms = max(1, int(round(float(best_time) * 1000)))
-          else:
-              best_ms = current_ms   # first submission ever
-
-          # Score to push = best across all submissions (lower is better)
-          score = min(current_ms, best_ms)
-          is_new_best = (status == 'PASS') and (current_ms <= best_ms)
-
+          score = 1 if status == 'PASS' else 0
           elapsed_display = f'{elapsed:.3f}s' if status == 'PASS' else 'N/A'
-          best_display    = f'{best_ms} ms'
+          best_display = f'{float(best_time):.3f}s' if best_time is not None else 'N/A'
+          max_diff_display = 'N/A' if max_diff is None else str(max_diff)
 
-          print(f'📊 Run: {current_ms} ms | Historical best: {best_display} | Pushing: {score} ms')
+          print(f'Classmoji pass/fail score: {score}/1 | Status: {status} | Best: {best_display}')
 
           outputs = os.environ['GITHUB_OUTPUT']
           with open(outputs, 'a') as f:
               f.write(f'score={score}\n')
               f.write(f'status={status}\n')
               f.write(f'elapsed={elapsed_display}\n')
-              f.write(f'best_ms={best_ms}\n')
-              f.write(f'is_new_best={str(is_new_best).lower()}\n')
+              f.write(f'best={best_display}\n')
+              f.write(f'max_diff={max_diff_display}\n')
               f.write(f'emoji={emoji}\n')
           PY
 
@@ -102,19 +86,18 @@ jobs:
         uses: classmoji/autograder@main
         with:
           score: ${{ steps.score.outputs.score }}
-          max-score: 9999
+          max-score: 1
           feedback: |
-            ## ${{ steps.score.outputs.emoji }} Race Result
+            ## ${{ steps.score.outputs.emoji }} OPS Challenge Autograding
 
             **Status**: `${{ steps.score.outputs.status }}`
             **Elapsed Time**: ${{ steps.score.outputs.elapsed }}
-            **Numeric Score**: **${{ steps.score.outputs.score }} ms** (lower is better ⬇️)
+            **Best Time**: ${{ steps.score.outputs.best }}
+            **Max Difference**: ${{ steps.score.outputs.max_diff }}
 
             ---
 
-            💡 **How scoring works:**
-            - ✅ Pass all tests → Your score = actual runtime in milliseconds
-            - ❌ Any test fails → Your score = 9999 ms (penalty)
-            - 🏆 Lower scores rank higher on the leaderboard
+            Classmoji shows this result as pass/fail feedback only.
+            Race standings are maintained in `LEADERBOARD.md`.
 
-            _Optimize your solution to minimize execution time!_
+            _Optimize your solution to minimize runtime after it passes correctness checks._
