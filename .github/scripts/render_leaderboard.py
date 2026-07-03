@@ -5,12 +5,14 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 
 EXCLUDED_USERS = {"github-classroom[bot]"}
+DISPLAY_TIMEZONE = ZoneInfo("Asia/Shanghai")
 
 
 def load_json(path: Path, default: Any) -> Any:
@@ -57,7 +59,9 @@ def render_leaderboard(
     task = load_json(task_json, {})
     task_id = task.get("task_id", "unknown")
     title = task.get("title", task_id)
-    generated_at = generated_at or datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    generated_at = generated_at or datetime.now(DISPLAY_TIMEZONE).strftime(
+        "%Y-%m-%d %H:%M:%S Asia/Shanghai"
+    )
     entries = load_entries(task_id, leaderboard_dir)
 
     lines = [
