@@ -2,6 +2,8 @@ name: Sync Public Leaderboard
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
 
 concurrency:
   group: sync-public-leaderboard
