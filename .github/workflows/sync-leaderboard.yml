@@ -7,7 +7,7 @@ on:
 
 concurrency:
   group: sync-public-leaderboard
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -15,7 +15,7 @@ permissions:
 jobs:
   sync:
     runs-on: [self-hosted, grader]
-    timeout-minutes: 5
+    timeout-minutes: 15
 
     env:
       ACTIVE_TASK_CONFIG: /srv/opsChallengeNew/tasks/active_task.json
