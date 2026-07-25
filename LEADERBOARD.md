@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_argmin_v1` - Time Series Argmin - Week 1
-**Updated:** 2026-07-25 15:06:11 Asia/Shanghai
+**Updated:** 2026-07-25 15:11:30 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
