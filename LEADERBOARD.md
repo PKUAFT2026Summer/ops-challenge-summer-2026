@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_argmin_v1` - Time Series Argmin - Week 1
-**Updated:** 2026-08-02 20:30:06 Asia/Shanghai
+**Updated:** 2026-08-02 20:55:05 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -16,7 +16,8 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 7 | `Test-0727` | 6.795 | 2 | 2 | 0 |
 | 8 | `Hipponoe` | 6.830 | 1 | 1 | 0 |
 | 9 | `iphinsau` | 7.275 | 4 | 3 | 1 |
-| 10 | `hjjbh1314` | 30.348 | 1 | 1 | 0 |
+| 10 | `ybly777` | 29.840 | 1 | 1 | 0 |
+| 11 | `hjjbh1314` | 30.348 | 1 | 1 | 0 |
 
 ---
 
