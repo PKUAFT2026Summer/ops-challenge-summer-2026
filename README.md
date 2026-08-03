@@ -44,11 +44,11 @@ cd testcase
 # install gdown instrument
 pip install gdown
 
-# data_for_ts_argmin.parquet
-gdown --fuzzy 'https://drive.google.com/file/d/1DLuX8Y9fvXk0cn7SbedDCnEIw34YcXdP/view?usp=drive_link'
+# data_for_rolling_mad.parquet
+gdown --fuzzy 'https://drive.google.com/file/d/1CAQyDh9SVkuLPz61U6diqbb-87dzYjKs/view?usp=drive_link'
 
-# rolling_rank_dense_v1.npy
-gdown --fuzzy 'https://drive.google.com/file/d/11xeeojmk4JTmrqPGxWd1es0hcHlU3Syq/view?usp=drive_link'
+# rolling_mad_v1.npy
+gdown --fuzzy 'https://drive.google.com/file/d/10C-Yp89OuNPgA1FxKt7NDdpn1S8zUz_e/view?usp=drive_link'
 ```
 
 如果 `gdown` 或 `conda` 安装时报错，可以尝试把 VPN 代理改为直连，或者设置清华镜像源：
@@ -87,9 +87,9 @@ pip install -r requirements.txt
 
 ```bash
 python localTest.py \
-  --entry_point ops_ts_argmin \
-  --input_path ./testcase/data_for_ts_argmin.parquet \
-  --ref_ans_path ./testcase/rolling_argmin_v1.npy \
+  --entry_point ops_rolling_mad \
+  --input_path ./testcase/data_for_rolling_mad.parquet \
+  --ref_ans_path ./testcase/rolling_mad_v1.npy \
   --window 20
 ```
 
