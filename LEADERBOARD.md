@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_argmin_v1` - Time Series Argmin - Week 1
-**Updated:** 2026-08-03 19:00:07 Asia/Shanghai
+**Updated:** 2026-08-03 19:10:06 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -9,17 +9,17 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | ---: | :--- | ------------: | ----------: | -----: | -----: |
 | 1 | `hjjbh1314` | 1.342 | 5 | 5 | 0 |
 | 2 | `ybly777` | 1.834 | 7 | 7 | 0 |
-| 3 | `HongmingLiang` | 1.883 | 11 | 10 | 1 |
+| 3 | `HongmingLiang` | 1.883 | 12 | 11 | 1 |
 | 4 | `cfdtstfs` | 2.549 | 10 | 7 | 3 |
 | 5 | `Chloeeee711` | 2.680 | 9 | 8 | 1 |
 | 6 | `2738640367-spec` | 3.000 | 3 | 3 | 0 |
 | 7 | `zzy615` | 3.563 | 7 | 7 | 0 |
-| 8 | `CODERchenganzhi` | 4.301 | 7 | 6 | 1 |
+| 8 | `CODERchenganzhi` | 4.265 | 8 | 7 | 1 |
 | 9 | `Jack895128` | 6.025 | 4 | 4 | 0 |
 | 10 | `iphinsau` | 6.714 | 5 | 4 | 1 |
 | 11 | `Test-0727` | 6.795 | 2 | 2 | 0 |
 | 12 | `Hipponoe` | 6.830 | 1 | 1 | 0 |
-| 13 | `wuqu0507` | 7.012 | 1 | 1 | 0 |
+| 13 | `wuqu0507` | 7.012 | 2 | 1 | 1 |
 | 14 | `BuJunchengPKU` | 8.528 | 1 | 1 | 0 |
 | 15 | `sana-zhou` | 11.756 | 1 | 1 | 0 |
 
