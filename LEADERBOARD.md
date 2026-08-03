@@ -1,11 +1,13 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_mad_v1` - Rolling MAD - Week 4
-**Updated:** 2026-08-03 20:39:31 Asia/Shanghai
+**Updated:** 2026-08-03 21:00:06 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
-No passing submissions yet.
+| Rank | User | Best Time (s) | Submissions | Passed | Failed |
+| ---: | :--- | ------------: | ----------: | -----: | -----: |
+| 1 | `Jiaosifang` | 22.638 | 1 | 1 | 0 |
 
 ---
 
