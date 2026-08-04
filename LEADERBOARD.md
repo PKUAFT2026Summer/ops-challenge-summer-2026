@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_mad_v1` - Rolling MAD - Week 4
-**Updated:** 2026-08-04 19:30:06 Asia/Shanghai
+**Updated:** 2026-08-05 00:20:06 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -12,7 +12,7 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 3 | `gyx023` | 10.284 | 2 | 2 | 0 |
 | 4 | `elephant-flower` | 10.581 | 1 | 1 | 0 |
 | 5 | `Hipponoe` | 11.897 | 4 | 4 | 0 |
-| 6 | `Jack895128` | 12.232 | 1 | 1 | 0 |
+| 6 | `Jack895128` | 12.232 | 2 | 1 | 1 |
 | 7 | `PQT389` | 21.347 | 1 | 1 | 0 |
 | 8 | `Jiaosifang` | 22.638 | 1 | 1 | 0 |
 
