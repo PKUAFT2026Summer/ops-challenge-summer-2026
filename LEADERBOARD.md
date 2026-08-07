@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_mad_v1` - Rolling MAD - Week 4
-**Updated:** 2026-08-08 00:55:05 Asia/Shanghai
+**Updated:** 2026-08-08 03:55:05 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -18,6 +18,7 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 9 | `iphinsau` | 15.087 | 1 | 1 | 0 |
 | 10 | `PQT389` | 21.347 | 1 | 1 | 0 |
 | 11 | `Jiaosifang` | 22.638 | 1 | 1 | 0 |
+| 12 | `hjjbh1314` | 24.085 | 1 | 1 | 0 |
 
 ---
 
