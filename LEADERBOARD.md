@@ -1,14 +1,14 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_mad_v1` - Rolling MAD - Week 4
-**Updated:** 2026-08-10 11:10:04 Asia/Shanghai
+**Updated:** 2026-08-10 11:55:07 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
 | Rank | User | Best Time (s) | Submissions | Passed | Failed |
 | ---: | :--- | ------------: | ----------: | -----: | -----: |
 | 1 | `cfdtstfs` | 2.660 | 1 | 1 | 0 |
-| 2 | `HongmingLiang` | 2.734 | 10 | 10 | 0 |
+| 2 | `HongmingLiang` | 2.712 | 11 | 11 | 0 |
 | 3 | `hjjbh1314` | 2.799 | 19 | 18 | 1 |
 | 4 | `Chloeeee711` | 2.996 | 1 | 1 | 0 |
 | 5 | `yuqing-su` | 3.214 | 3 | 3 | 0 |
@@ -20,7 +20,7 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 11 | `Sheldonfff` | 7.976 | 2 | 2 | 0 |
 | 12 | `gyx023` | 10.284 | 2 | 2 | 0 |
 | 13 | `elephant-flower` | 10.581 | 1 | 1 | 0 |
-| 14 | `iphinsau` | 10.618 | 4 | 3 | 1 |
+| 14 | `iphinsau` | 10.618 | 5 | 4 | 1 |
 | 15 | `Hipponoe` | 11.897 | 4 | 4 | 0 |
 | 16 | `PQT389` | 21.347 | 1 | 1 | 0 |
 | 17 | `Jiaosifang` | 22.638 | 1 | 1 | 0 |
