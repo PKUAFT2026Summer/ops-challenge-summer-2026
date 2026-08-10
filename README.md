@@ -44,11 +44,11 @@ cd testcase
 # install gdown instrument
 pip install gdown
 
-# data_for_rolling_mad.parquet
-gdown --fuzzy 'https://drive.google.com/file/d/1CAQyDh9SVkuLPz61U6diqbb-87dzYjKs/view?usp=drive_link'
+# data_for_rolling_max_drawdown.parquet
+gdown --fuzzy 'https://drive.google.com/file/d/1cyswdEGcjBBM6tMCSrViwNhWgI0y3xo8/view?usp=drive_link'
 
-# rolling_mad_v1.npy
-gdown --fuzzy 'https://drive.google.com/file/d/10C-Yp89OuNPgA1FxKt7NDdpn1S8zUz_e/view?usp=drive_link'
+# rolling_max_drawdown_v1.npy
+gdown --fuzzy 'https://drive.google.com/file/d/1nP8d6NhIMZWgfwjxP1sehR2P1JYUyKg7/view?usp=drive_link'
 ```
 
 如果 `gdown` 或 `conda` 安装时报错，可以尝试把 VPN 代理改为直连，或者设置清华镜像源：
@@ -87,9 +87,9 @@ pip install -r requirements.txt
 
 ```bash
 python localTest.py \
-  --entry_point ops_rolling_mad \
-  --input_path ./testcase/data_for_rolling_mad.parquet \
-  --ref_ans_path ./testcase/rolling_mad_v1.npy \
+  --entry_point ops_ts_max_drawdown \
+  --input_path ./testcase/data_for_rolling_max_drawdown.parquet \
+  --ref_ans_path ./testcase/rolling_max_drawdown_v1.npy \
   --window 20
 ```
 
