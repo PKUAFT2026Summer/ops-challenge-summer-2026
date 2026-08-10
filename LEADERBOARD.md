@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_mad_v1` - Rolling MAD - Week 4
-**Updated:** 2026-08-10 16:10:06 Asia/Shanghai
+**Updated:** 2026-08-10 16:15:06 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -18,14 +18,15 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 9 | `Jack895128` | 5.392 | 4 | 3 | 1 |
 | 10 | `2738640367-spec` | 5.923 | 2 | 2 | 0 |
 | 11 | `Flappy-Kitten` | 6.353 | 2 | 2 | 0 |
-| 12 | `Sheldonfff` | 7.976 | 2 | 2 | 0 |
-| 13 | `gyx023` | 10.284 | 2 | 2 | 0 |
-| 14 | `elephant-flower` | 10.581 | 1 | 1 | 0 |
-| 15 | `iphinsau` | 10.618 | 6 | 5 | 1 |
-| 16 | `Hipponoe` | 11.897 | 4 | 4 | 0 |
-| 17 | `PQT389` | 21.347 | 1 | 1 | 0 |
-| 18 | `Jiaosifang` | 22.638 | 1 | 1 | 0 |
-| 19 | `succulent507` | 452.086 | 2 | 2 | 0 |
+| 12 | `zhaohongkuan0` | 7.645 | 1 | 1 | 0 |
+| 13 | `Sheldonfff` | 7.976 | 2 | 2 | 0 |
+| 14 | `gyx023` | 10.284 | 2 | 2 | 0 |
+| 15 | `elephant-flower` | 10.581 | 1 | 1 | 0 |
+| 16 | `iphinsau` | 10.618 | 6 | 5 | 1 |
+| 17 | `Hipponoe` | 11.897 | 4 | 4 | 0 |
+| 18 | `PQT389` | 21.347 | 1 | 1 | 0 |
+| 19 | `Jiaosifang` | 22.638 | 1 | 1 | 0 |
+| 20 | `succulent507` | 452.086 | 2 | 2 | 0 |
 
 ---
 
