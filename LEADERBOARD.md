@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_mad_v1` - Rolling MAD - Week 4
-**Updated:** 2026-08-10 16:00:06 Asia/Shanghai
+**Updated:** 2026-08-10 16:10:06 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -9,10 +9,10 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | ---: | :--- | ------------: | ----------: | -----: | -----: |
 | 1 | `HongmingLiang` | 2.539 | 13 | 13 | 0 |
 | 2 | `cfdtstfs` | 2.660 | 1 | 1 | 0 |
-| 3 | `hjjbh1314` | 2.799 | 26 | 25 | 1 |
+| 3 | `hjjbh1314` | 2.799 | 27 | 26 | 1 |
 | 4 | `Chloeeee711` | 2.996 | 1 | 1 | 0 |
 | 5 | `yuqing-su` | 3.214 | 3 | 3 | 0 |
-| 6 | `ybly777` | 4.399 | 2 | 2 | 0 |
+| 6 | `ybly777` | 4.399 | 3 | 3 | 0 |
 | 7 | `CODERchenganzhi` | 4.715 | 2 | 2 | 0 |
 | 8 | `zzy615` | 4.790 | 3 | 3 | 0 |
 | 9 | `Jack895128` | 5.392 | 4 | 3 | 1 |
