@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_mad_v1` - Rolling MAD - Week 4
-**Updated:** 2026-08-10 17:10:05 Asia/Shanghai
+**Updated:** 2026-08-10 17:20:05 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -20,13 +20,14 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 11 | `Flappy-Kitten` | 6.353 | 2 | 2 | 0 |
 | 12 | `zhaohongkuan0` | 7.645 | 1 | 1 | 0 |
 | 13 | `Sheldonfff` | 7.976 | 2 | 2 | 0 |
-| 14 | `gyx023` | 10.284 | 2 | 2 | 0 |
-| 15 | `elephant-flower` | 10.581 | 1 | 1 | 0 |
-| 16 | `iphinsau` | 10.618 | 6 | 5 | 1 |
-| 17 | `Hipponoe` | 11.897 | 4 | 4 | 0 |
-| 18 | `PQT389` | 21.347 | 1 | 1 | 0 |
-| 19 | `Jiaosifang` | 22.638 | 1 | 1 | 0 |
-| 20 | `succulent507` | 452.086 | 3 | 3 | 0 |
+| 14 | `wuqu0507` | 8.035 | 2 | 1 | 1 |
+| 15 | `gyx023` | 10.284 | 2 | 2 | 0 |
+| 16 | `elephant-flower` | 10.581 | 1 | 1 | 0 |
+| 17 | `iphinsau` | 10.618 | 6 | 5 | 1 |
+| 18 | `Hipponoe` | 11.897 | 4 | 4 | 0 |
+| 19 | `PQT389` | 21.347 | 1 | 1 | 0 |
+| 20 | `Jiaosifang` | 22.638 | 1 | 1 | 0 |
+| 21 | `succulent507` | 452.086 | 3 | 3 | 0 |
 
 ---
 
