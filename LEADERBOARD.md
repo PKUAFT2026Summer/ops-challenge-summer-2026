@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_mad_v1` - Rolling MAD - Week 4
-**Updated:** 2026-08-10 17:20:05 Asia/Shanghai
+**Updated:** 2026-08-10 17:30:05 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -27,7 +27,7 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 18 | `Hipponoe` | 11.897 | 4 | 4 | 0 |
 | 19 | `PQT389` | 21.347 | 1 | 1 | 0 |
 | 20 | `Jiaosifang` | 22.638 | 1 | 1 | 0 |
-| 21 | `succulent507` | 452.086 | 3 | 3 | 0 |
+| 21 | `succulent507` | 452.086 | 4 | 4 | 0 |
 
 ---
 
