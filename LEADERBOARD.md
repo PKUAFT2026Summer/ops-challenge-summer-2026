@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_mad_v1` - Rolling MAD - Week 4
-**Updated:** 2026-08-10 15:45:06 Asia/Shanghai
+**Updated:** 2026-08-10 15:50:05 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -12,12 +12,12 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 3 | `hjjbh1314` | 2.799 | 26 | 25 | 1 |
 | 4 | `Chloeeee711` | 2.996 | 1 | 1 | 0 |
 | 5 | `yuqing-su` | 3.214 | 3 | 3 | 0 |
-| 6 | `CODERchenganzhi` | 4.715 | 2 | 2 | 0 |
-| 7 | `zzy615` | 4.790 | 3 | 3 | 0 |
-| 8 | `Jack895128` | 5.392 | 4 | 3 | 1 |
-| 9 | `2738640367-spec` | 5.923 | 2 | 2 | 0 |
-| 10 | `Flappy-Kitten` | 6.353 | 2 | 2 | 0 |
-| 11 | `ybly777` | 6.965 | 1 | 1 | 0 |
+| 6 | `ybly777` | 4.399 | 2 | 2 | 0 |
+| 7 | `CODERchenganzhi` | 4.715 | 2 | 2 | 0 |
+| 8 | `zzy615` | 4.790 | 3 | 3 | 0 |
+| 9 | `Jack895128` | 5.392 | 4 | 3 | 1 |
+| 10 | `2738640367-spec` | 5.923 | 2 | 2 | 0 |
+| 11 | `Flappy-Kitten` | 6.353 | 2 | 2 | 0 |
 | 12 | `Sheldonfff` | 7.976 | 2 | 2 | 0 |
 | 13 | `gyx023` | 10.284 | 2 | 2 | 0 |
 | 14 | `elephant-flower` | 10.581 | 1 | 1 | 0 |
