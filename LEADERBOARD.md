@@ -1,11 +1,13 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_max_drawdown_v1` - Rolling Max Drawdown - Week 3
-**Updated:** 2026-08-10 20:15:05 Asia/Shanghai
+**Updated:** 2026-08-10 21:32:27 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
-No passing submissions yet.
+| Rank | User | Best Time (s) | Submissions | Passed | Failed |
+| ---: | :--- | ------------: | ----------: | -----: | -----: |
+| 1 | `Jiaosifang` | 100.486 | 1 | 1 | 0 |
 
 ---
 
