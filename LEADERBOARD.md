@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_max_drawdown_v1` - Rolling Max Drawdown - Week 3
-**Updated:** 2026-08-11 11:55:05 Asia/Shanghai
+**Updated:** 2026-08-11 19:05:05 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -11,8 +11,9 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 2 | `CODERchenganzhi` | 3.286 | 1 | 1 | 0 |
 | 3 | `gyx023` | 3.610 | 2 | 2 | 0 |
 | 4 | `Hipponoe` | 5.750 | 1 | 1 | 0 |
-| 5 | `Flappy-Kitten` | 8.788 | 2 | 1 | 1 |
-| 6 | `Jiaosifang` | 100.486 | 1 | 1 | 0 |
+| 5 | `Ivonne26-pku` | 8.378 | 1 | 1 | 0 |
+| 6 | `Flappy-Kitten` | 8.788 | 2 | 1 | 1 |
+| 7 | `Jiaosifang` | 100.486 | 1 | 1 | 0 |
 
 ---
 
