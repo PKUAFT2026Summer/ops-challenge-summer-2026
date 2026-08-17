@@ -1,13 +1,13 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_max_drawdown_v1` - Rolling Max Drawdown - Week 3
-**Updated:** 2026-08-17 17:20:07 Asia/Shanghai
+**Updated:** 2026-08-17 17:35:06 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
 | Rank | User | Best Time (s) | Submissions | Passed | Failed |
 | ---: | :--- | ------------: | ----------: | -----: | -----: |
-| 1 | `ybly777` | 0.613 | 21 | 19 | 2 |
+| 1 | `ybly777` | 0.613 | 22 | 20 | 2 |
 | 2 | `hjjbh1314` | 1.026 | 10 | 8 | 2 |
 | 3 | `HongmingLiang` | 1.584 | 19 | 19 | 0 |
 | 4 | `Sheldonfff` | 2.587 | 4 | 4 | 0 |
@@ -21,10 +21,11 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | 12 | `yuqing-su` | 5.247 | 2 | 2 | 0 |
 | 13 | `Hipponoe` | 5.750 | 1 | 1 | 0 |
 | 14 | `iphinsau` | 6.785 | 2 | 1 | 1 |
-| 15 | `Ivonne26-pku` | 7.352 | 3 | 3 | 0 |
-| 16 | `elephant-flower` | 8.019 | 1 | 1 | 0 |
-| 17 | `Flappy-Kitten` | 8.788 | 2 | 1 | 1 |
-| 18 | `Jiaosifang` | 100.486 | 3 | 1 | 2 |
+| 15 | `zhaohongkuan0` | 6.967 | 1 | 1 | 0 |
+| 16 | `Ivonne26-pku` | 7.352 | 3 | 3 | 0 |
+| 17 | `elephant-flower` | 8.019 | 1 | 1 | 0 |
+| 18 | `Flappy-Kitten` | 8.788 | 2 | 1 | 1 |
+| 19 | `Jiaosifang` | 100.486 | 3 | 1 | 2 |
 
 ---
 
