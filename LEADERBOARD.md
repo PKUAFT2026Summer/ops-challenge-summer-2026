@@ -1,7 +1,7 @@
 # OPS Challenge Leaderboard
 
 **Task:** `rolling_slope_v1` - Rolling Slope - Week 4
-**Updated:** 2026-08-18 15:10:07 Asia/Shanghai
+**Updated:** 2026-08-18 15:25:05 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
@@ -9,7 +9,7 @@ Rankings are sorted by **Best Time** ascending. Only passing submissions are ran
 | ---: | :--- | ------------: | ----------: | -----: | -----: |
 | 1 | `HongmingLiang` | 1.470 | 1 | 1 | 0 |
 | 2 | `Hipponoe` | 3.141 | 1 | 1 | 0 |
-| 3 | `Ivonne26-pku` | 4.712 | 1 | 1 | 0 |
+| 3 | `Ivonne26-pku` | 4.712 | 2 | 2 | 0 |
 | 4 | `Jiaosifang` | 290.573 | 1 | 1 | 0 |
 
 ---
