@@ -1,33 +1,11 @@
 # OPS Challenge Leaderboard
 
-**Task:** `rolling_max_drawdown_v1` - Rolling Max Drawdown - Week 3
-**Updated:** 2026-08-18 02:25:05 Asia/Shanghai
+**Task:** `rolling_slope_v1` - Rolling Slope - Week 4
+**Updated:** 2026-08-18 09:47:01 Asia/Shanghai
 
 Rankings are sorted by **Best Time** ascending. Only passing submissions are ranked.
 
-| Rank | User | Best Time (s) | Submissions | Passed | Failed |
-| ---: | :--- | ------------: | ----------: | -----: | -----: |
-| 1 | `ybly777` | 0.613 | 22 | 20 | 2 |
-| 2 | `hjjbh1314` | 1.026 | 10 | 8 | 2 |
-| 3 | `HongmingLiang` | 1.584 | 19 | 19 | 0 |
-| 4 | `Chloeeee711` | 2.191 | 5 | 5 | 0 |
-| 5 | `gyx023` | 2.501 | 13 | 13 | 0 |
-| 6 | `Sheldonfff` | 2.587 | 4 | 4 | 0 |
-| 7 | `2738640367-spec` | 2.587 | 1 | 1 | 0 |
-| 8 | `CODERchenganzhi` | 2.617 | 2 | 2 | 0 |
-| 9 | `zzy615` | 2.645 | 3 | 3 | 0 |
-| 10 | `Jack895128` | 4.172 | 3 | 3 | 0 |
-| 11 | `wuqu0507` | 4.361 | 2 | 2 | 0 |
-| 12 | `cfdtstfs` | 4.499 | 1 | 1 | 0 |
-| 13 | `FLIPPED-create` | 4.652 | 6 | 6 | 0 |
-| 14 | `yuqing-su` | 5.247 | 2 | 2 | 0 |
-| 15 | `Hipponoe` | 5.750 | 1 | 1 | 0 |
-| 16 | `iphinsau` | 6.785 | 2 | 1 | 1 |
-| 17 | `zhaohongkuan0` | 6.967 | 1 | 1 | 0 |
-| 18 | `Ivonne26-pku` | 7.352 | 3 | 3 | 0 |
-| 19 | `elephant-flower` | 8.019 | 1 | 1 | 0 |
-| 20 | `Flappy-Kitten` | 8.788 | 2 | 1 | 1 |
-| 21 | `Jiaosifang` | 100.486 | 3 | 1 | 2 |
+No passing submissions yet.
 
 ---
 
