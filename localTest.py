@@ -34,18 +34,18 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--entry_point",
-        default="ops_ts_max_drawdown",
-        help="Entry point function name (default: ops_ts_max_drawdown)"
+        default="ops_ts_rolling_slope",
+        help="Entry point function name (default: ops_ts_rolling_slope)"
     )
     parser.add_argument(
         "--input_path",
-        default="testcase/data_for_rolling_max_drawdown.parquet",
-        help="Path to input parquet file (default: testcase/data_for_rolling_max_drawdown.parquet)"
+        default="testcase/data_for_rolling_slope.parquet",
+        help="Path to input parquet file (default: testcase/data_for_rolling_slope.parquet)"
     )
     parser.add_argument(
         "--ref_ans_path",
-        default="testcase/rolling_max_drawdown_v1.npy",
-        help="Path to reference answer npy file (default: testcase/rolling_max_drawdown_v1.npy)"
+        default="testcase/rolling_slope_v1.npy",
+        help="Path to reference answer npy file (default: testcase/rolling_slope_v1.npy)"
     )
     parser.add_argument(
         "--window",
